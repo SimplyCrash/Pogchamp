@@ -28,6 +28,10 @@ function showDivs(n) {
 
 //Button
 function initialBook() {
+  let firstName = "";
+  let lastName = "";
+  let email = "";
+
   swal("First name:", {
     content: "input",
   })
@@ -49,12 +53,27 @@ function initialBook() {
         .then((value) => {
           console.log(value)
           swal("Date:", {
-            html: '<input id="swal-input1" class="swal2-input">' +
-            '<input id="swal-input2" class="swal2-input">'
-            
+            content: "input",
           })
+            .then((value) => {
+            console.log(value)
+            swal("Time:", {
+              content: "input",
+            })
+              .then((value) => {
+                console.log(value)
+                swal("Room:", {
+                  content: "input",
+              })
+                .then((value) => {
+                  console.log(value)
+                  swal("Success", "Thank you for booking", "success")
+              })
+            })
+          })
+        })
       })
     })
   })
-})
 }
+
