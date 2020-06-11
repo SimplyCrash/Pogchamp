@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <!-- title of HTML page -->
+  <title>Plan Flight (1/2)</title>
+  <!-- link "styles.css" -->
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <!-- link "temp-media.css" -->
+  <link rel="stylesheet" type="text/css" href="styles/temp-media.css">
+  <!-- import MDL library -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <!-- colour accent selection -->
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css" />
+  <!-- reflow contents -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- import favicon -->
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+</head>
+
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+    <!-- fixed header -->
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- title of fixed header -->
+        <span class="mdl-layout-title">DOCTOR DESTINATION</span>
+      </div>
+    </header>
+
+    <!-- hamburger menu drawer -->
+    <div class="mdl-layout__drawer">
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" onClick="openHomePage()">Home Page</a>
+        <a class="mdl-navigation__link" onClick="openPlanFlight()">Plan a Flight</a>
+        <a class="mdl-navigation__link" onClick="openFleetInfo()">Fleet Information</a>
+        <a class="mdl-navigation__link" onClick="openContactUs()">Contact Us</a>
+      </nav>
+    </div>
+
+    <!-- main content -->
+    <main class="mdl-layout__content">
+      <div class="page-content" align="center">
+
+        <div class="mdl-grid">
+          <div class="mdl-cell-outer mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+
+            <!-- progress bar -->
+            <div id="step">Step 1 of 2</div>
+            <div id="p1" class="mdl-progress mdl-js-progress"></div>
+
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+
+                <!-- date input -->
+                <div>
+                  <h4>Departure Date</h4>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="date" id="date">
+                    <label class="mdl-textfield__label" for="date">Date (yyyy-MM-dd)...</label>
+                  </div>
+                </div>
+
+                <!-- time input -->
+                <div>
+                  <h4>Time of Departure</h4>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="time" id="time">
+                    <label class="mdl-textfield__label" for="time">Time...</label>
+                  </div>
+                </div>
+
+                <!-- country input -->
+                <div>
+                  <h4>Country of Departure</h4>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="country">
+                    <label class="mdl-textfield__label" for="country">Country...</label>
+                  </div>
+                </div>
+
+                <!-- airport input -->
+                <div>
+                  <h4>Airport Selection</h4>
+                  <div class="mdl-textfield mdl-js-textfield">
+                    <div id="airportOptions">
+                      <select class="mdl-textfield__input" id="airport" name="airport">
+                        <option value="">select an option...</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- weather card -->
+              <div class="mobileHide mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" id="infoBox">
+                <div id="weather">
+                  <div id="card">
+                    <h6 align="left" id="sourceDate" style="color:white">  </h6>
+                    <h5 align="left" id="sourceAirport" style="color:white"></h5>
+                    <h5 align="left" id="temperature" style="color:white"></h5>
+
+                    <ul align="left" class="weatherInfo">
+                      <li id="summary"></li>
+                      <li id="precip"></li>
+                      <li id="humidity"></li>
+                      <li id="windSpeed"></li>
+                      <li id="windGust"></li>
+                      <li id="windBearing"></li>
+                      <li id="uv"></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="mdl-grid">
+              <div class="mdl-cell bottom mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+
+                <div align="center">
+                  <!-- cancel button -->
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onClick="cancelBooking()">
+                    CANCEL
+                  </button>
+                  <!-- next button -->
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onClick="nextStep()">
+                    NEXT
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- link JS files -->
+  <script src="scripts/shared.js" type="text/javascript"></script>
+  <script src="scripts/PlanFlight_1.js" type="text/javascript"></script>
+</body>
+
+</html>
