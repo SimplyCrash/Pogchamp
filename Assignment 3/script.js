@@ -27,11 +27,15 @@ function showDivs(n) {
 }
 
 //Button
+<<<<<<< Updated upstream
 function initialBook() {
   let firstName = "";
   let lastName = "";
   let email = "";
 
+=======
+function initialBook2() {
+>>>>>>> Stashed changes
   swal("First name:", {
     content: "input",
   })
@@ -77,3 +81,34 @@ function initialBook() {
   })
 }
 
+<<<<<<< Updated upstream
+=======
+function initialBook(){
+  Swal.mixin({
+    input: 'text',
+    confirmButtonText: 'Next &rarr;',
+    showCancelButton: true,
+    progressSteps: ['1', '2', '3']
+  }).queue([
+    {
+      title: 'Question 1',
+      text: 'Chaining swal2 modals is easy'
+    },
+    'Question 2',
+    'Question 3'
+  ]).then((result) => {
+    if (result.value) {
+      const answers = JSON.stringify(result.value)
+      Swal.fire({
+        title: 'All done!',
+        html: `
+          Your answers:
+          <pre><code>${answers}</code></pre>
+        `,
+        confirmButtonText: 'Lovely!'
+      })
+    }
+  })
+}
+
+>>>>>>> Stashed changes
